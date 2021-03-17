@@ -1,0 +1,85 @@
+#bin/bash
+#export IDE_HOME=/Applications/corona-java-1.1.0
+export SUDO_PS1="\[\e[33;1;41m\][\u] \w \$\[\e[0m\] "
+export PS1="[\u] \W$ "
+export ECLIPSE_HOME=$IDE_HOME
+export M2_HOME=/usr/local/apache-maven-3.5.2/
+export MAVEN_HOME=/usr/local/apache-maven-3.5.2/
+#export JRE_HOME=$IDE_HOME/jdk-7u45-macosx-x64/Contents/Home/jre
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home
+export JRE_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home/jre
+export JDK_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk
+#export JBOSS_HOME=$IDE_HOME/jboss-as-7.1.3.Final
+
+export PATH="/opt/local/bin:/usr/local/ImageMagick-6.8.3-0/bin:/usr/local/mysql/bin/:M2_HOME/bin:/usr/local/bin:/Users/mbathula/Applications:$PATH"
+export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:/usr/local/lib:/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ImageIO.framework/Versions/A/Resources:/usr/local/lib:/usr/local/mysql/lib:/opt/local/libi:/usr/libi:/usr/local/ImageMagick-6.8.3-0/libi:/opt/weblogic/wl-plugin/lib"
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/
+#export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/ImageMagick-6.8.3-0/lib
+#rvm gemset use rails2.3
+#export JDK_HOME="/Library/Java/Home"
+#export JAVA_HOME="/Library/Java/Home"
+#export JRE_HOME="/Library/Java/Home"
+#export JBOSS_HOME="/Applications/corona-java-1.1.0/jboss-as-7.1.3.Final"
+export PATH=/usr/local/mongodb-osx-x86_64-2.6.7/bin:$M2_HOME/bin:$JRE_HOME/bin:$JAVA_HOME/bin:$JBOSS_HOME/bin:$PATH:/user/local/homebrew/bin
+alias st="ssh stage2t7385"
+#alias s6="ssh stage2dev006"
+alias sr="ssh stage2p2570"
+alias mfa11="ssh mf-app11.qa.ebay.com"
+alias mfa12="ssh mf-app12.qa.ebay.com"
+alias mfa13="ssh mf-app13.qa.ebay.com"
+alias mfa14="ssh mf-app14.qa.ebay.com"
+alias mfw11="ssh mf-web11.qa.ebay.com"
+alias mfw12="ssh mf-web12.qa.ebay.com"
+alias mfw13="ssh mf-web13.qa.ebay.com"
+alias mfw14="ssh mf-web14.qa.ebay.com"
+alias mfdb="ssh mf-db04.qa.ebay.com"
+alias hy="ssh hyperlvs01"
+alias kcd="cd /paypal/kermitr"
+alias bcd="cd /paypal/batch-altpay-jobs"
+export SELENIUM_JAR=~/selenium-server-standalone-2.44.0.jar
+export KERMIT_PIN=8xUJKIpxlufcx8xvwmBnVsHoSSI
+
+
+export CORONA_HOME=/Applications/corona-java-1.1.0
+export JBOSS_HOME=$CORONA_HOME/jboss-as-7.1.3.Final
+export PROJECT_HOME=/paypal/kermitr
+
+alias wl='cd /opt/weblogic/user_projects/domains/CGT'
+alias acd='cd /paypal/altpaymentsserv'
+alias ressh='eval `ssh-agent` && ssh-add'
+alias keycopy=' cat @/.ssh/id_rsa.pub | ssh mbathula@$STAGE "mkdir ~/.ssh; cat >> ~/.ssh/authorized_keys"'
+alias sqldb='ssh stage2vps51.qa.paypal.com'
+alias acd='cd /paypal/altpaymentsserv'
+alias pcd='cd /paypal/paymentapiplatserv'
+alias picd='cd /paypal/paymentapiplatformserv-interfaces'
+alias cbcd='cd /paypal/checkoutbuyerplatserv'
+alias cscd='cd /paypal/checkoutsellerplatserv'
+alias aicd='cd /paypal/altpayinstrumentserv'
+alias xcd='cd /paypal/xopaymentgatewayserv'
+alias amcd='cd /paypal/amqaltpaymentsmsgd'
+alias fixdisplay='sudo rm -rf  /Library/Preferences/com.apple.windowserver.plist'
+alias mvnSkipTestsd='mvn clean install -DskipTests=true'
+alias mvnSkipTests='mvn clean install -DskipTests=true -s settings.xml'
+alias hy8='ssh hyperlvs08.qa.paypal.com'
+alias hy31='ssh hyperlvs31.qa.paypal.com'
+alias bast='ssh phx-bastion'
+alias compilepx='pcd;mvnSkipTestsd;xcd;mvnSkipTestsd'
+alias epoch='date -r'
+alias telogin='testenv_darwin_amd64 login'
+alias telist='testenv_darwin_amd64 list --operable'
+alias teupdate='testenv_darwin_amd64 update'
+alias tv='/paypal/paywalle2enodeweb/scripts/testenv/tv'
+alias mcd='cd /paypal/merchant.CommonComponentsSpecification'
+alias ocd='cd /paypal/checkout.OrdersSpecification'
+export TE_GENESIS_TENANT=partnertestenv
+
+. ~/git_aliases.sh
+alias ktopics='docker-compose exec kafka /opt/kafka/bin/kafka-topics.sh'
+alias kconsole-producer='docker-compose exec kafka /opt/kafka/bin/kafka-console-producer.sh'
+alias kconsole-consumer='docker-compose exec kafka /opt//bin/kafka-console-consumer.sh'
+alias fix-certs='sudo jamf policy -trigger fixSS'
+
+
+#export NVM_DIR=~/.nvm
+#source ~/.nvm/nvm.sh
+export CONTENT_SRC="/paypal/devdoc/src"
